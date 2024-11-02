@@ -7,19 +7,11 @@ package project252;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- * @author reemajez
- */
-public class ConfigManager {
-    private static ConfigManager instance;
-    private Map<String, String> config;
 
-    private ConfigManager() {
-        config = new HashMap<>();
-        config.put("currency", "USD");
-        config.put("region", "US");
-    }
+public class ConfigManager {
+     private static ConfigManager instance;
+
+    private ConfigManager() {}
 
     public static ConfigManager getInstance() {
         if (instance == null) {
@@ -27,9 +19,13 @@ public class ConfigManager {
         }
         return instance;
     }
-
-    public String getConfig(String key) {
-        return config.get(key);
+public String getConfig(String key) {
+    switch (key) {
+        case "currency":
+            return "SAR"; // العملة في جدة
+        case "region":
+            return "Jeddah"; // المنطقة
+        default:
+            return null;
     }
-}
-
+}}
