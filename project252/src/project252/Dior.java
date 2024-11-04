@@ -9,6 +9,9 @@ package project252;
  * @author reemajez
  */
 public class Dior extends perfume {
+    
+    public Dior() {
+    }
 
     @Override
     public String getName() {
@@ -19,6 +22,8 @@ public class Dior extends perfume {
     public double getPrice() {
         return 900;
     }
+
+    
 
     @Override
     public String getDescription() {
