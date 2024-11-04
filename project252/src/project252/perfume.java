@@ -5,56 +5,56 @@ import java.util.List;
 
 
 // Subject class (Product)
-public class Product implements ProductInterface {
-    private String name;
-    private double price;
+import java.util.ArrayList;
+import java.util.List;
+
+// Abstract Product class
+public abstract class perfume  {
+    
     private List<ProductObserver> observers = new ArrayList<>();
     private String status;
     private String availability;
-    private String description;
-    public Product(String name, double price) {
-        this.name = name;
-        this.price = price;
-    }
+    private double price;
+    
 
-    public Product(String name, double price, String description) {
-        this.name = name;
-        this.price = price;
-        this.description = description;
-    }
 
+    // Method to add an observer
     public void addObserver(ProductObserver observer) {
         observers.add(observer);
     }
 
+    // Method to remove an observer
     public void removeObserver(ProductObserver observer) {
         observers.remove(observer);
     }
 
+    // Method to set availability and notify observers
     public void setAvailability(String availability) {
         this.availability = availability;
         notifyObservers("Availability changed to: " + availability);
     }
 
+    // Method to set status and notify observers
     public void setStatus(String status) {
         this.status = status;
         notifyObservers("Status changed to: " + status);
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    @Override
+    
+    public abstract String getName() ;
     public double getPrice() {
-        return price;
+        return price; // Implement the method here
     }
+    
 
-    public String getDescription() {
-       
-        return description;
-    }
+    // Abstract method for subclasses to implement custom descriptions
+    public abstract String getDescription();
+
+    // Private method to notify all observers
     private void notifyObservers(String message) {
         for (ProductObserver observer : observers) {
             observer.update(message);

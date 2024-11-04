@@ -5,8 +5,11 @@
  */
 package project252;
 
-class PayPalPayment implements Payment {
-    public void processPayment(double amount) {
-        System.out.println("Processing PayPal payment of " + amount);
+
+
+public class PayPalPayment implements PaymentStrategy {
+    @Override
+    public String processPayment(double amount) {
+        return "Processing PayPal payment of " + amount;
     }
 }

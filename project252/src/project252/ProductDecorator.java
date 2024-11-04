@@ -8,21 +8,21 @@ package project252;
 
 
 
-public abstract class ProductDecorator implements ProductInterface {
-    protected ProductInterface decoratedProduct;
+public abstract class ProductDecorator extends perfume{
+    protected perfume decoratedperfume;
 
-    public ProductDecorator(ProductInterface decoratedProduct) {
-        this.decoratedProduct = decoratedProduct;
+    public ProductDecorator(perfume decoratedperfume) {
+        this.decoratedperfume = decoratedperfume;
     }
 
     @Override
     public String getName() {
-        return decoratedProduct.getName();
+        return decoratedperfume.getName();
     }
 
     @Override
     public double getPrice() {
-        return decoratedProduct.getPrice();
+        return decoratedperfume.getPrice();
     }
 }
 

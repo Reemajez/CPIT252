@@ -5,9 +5,9 @@
  */
 package project252;
 
-
-class CreditCardPayment implements Payment {
-    public void processPayment(double amount) {
-        System.out.println("Processing credit card payment of " + amount);
+public class CreditCardPayment implements PaymentStrategy {
+    @Override
+    public String processPayment(double amount) {
+        return "Processing credit card payment of " + amount;
     }
 }

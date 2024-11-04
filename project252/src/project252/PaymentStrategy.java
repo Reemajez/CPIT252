@@ -5,6 +5,8 @@
  */
 package project252;
 
-interface Payment {
-    public void processPayment(double amount);
+
+
+public interface PaymentStrategy {
+    String processPayment(double amount);
 }
