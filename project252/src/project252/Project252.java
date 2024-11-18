@@ -27,19 +27,6 @@ public class Project252 {
     perfume chanelNo5 = perfumeFactory.createPerfume("chanel");
     System.out.println("Product: " + chanelNo5.getName() + ", Price: " + chanelNo5.getPrice() + ", Description: " + chanelNo5.getDescription());
      
-    // إنشاء المراقبين
-    ProductObserver emailObserver = new EmailNotification();
-    ProductObserver smsObserver = new SMSNotification();
-
-    // إلحاق المراقبين بالمنتج
-    chanelNo5.addObserver(emailObserver);
-    chanelNo5.addObserver(smsObserver);
-
-    // تعيين توافر المنتج وحالته
-    chanelNo5.setAvailability("in stock");
-    chanelNo5.setAvailability("out of stock");
-    chanelNo5.setStatus("shipped");
-
     // تزيين المنتج بخصم
     perfume discountedPerfume = new DiscountDecorator(chanelNo5, 0.1); // خصم 10%
 
