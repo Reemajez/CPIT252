@@ -10,8 +10,10 @@ package project252;
  */
 public class Dior extends perfume {
     
-    public Dior() {
+    public Dior(double price) {
+        this.setPrice(price);
     }
+
 
     @Override
     public String getName() {
