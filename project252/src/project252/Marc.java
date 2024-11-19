@@ -11,6 +11,10 @@ package project252;
  */
 public class Marc extends perfume{
 
+    public Marc(double price) {
+        this.setPrice(price);
+    }
+
     @Override
     public String getName() {
         return "Marc Jacobs Daisy"; }
